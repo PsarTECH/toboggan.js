@@ -6,20 +6,32 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-
+    interface TobContainer {
+    }
 }
 declare global {
+    interface HTMLTobContainerElement extends Components.TobContainer, HTMLStencilElement {
+    }
+    var HTMLTobContainerElement: {
+        prototype: HTMLTobContainerElement;
+        new (): HTMLTobContainerElement;
+    };
     interface HTMLElementTagNameMap {
+        "tob-container": HTMLTobContainerElement;
     }
 }
 declare namespace LocalJSX {
+    interface TobContainer {
+    }
     interface IntrinsicElements {
+        "tob-container": TobContainer;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "tob-container": LocalJSX.TobContainer & JSXBase.HTMLAttributes<HTMLTobContainerElement>;
         }
     }
 }
